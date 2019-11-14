@@ -1,0 +1,15 @@
+body {
+  width: 800px;
+  height: 600px;
+  margin: 150px auto;
+  background: #F4F5FC;
+  position: relative;
+}
+
+form {
+  margin: 0 auto;
+  width: 650px;
+  height: 550px;
+  background: #fff;
+}
+/*# sourceMappingURL=main.css.map */
