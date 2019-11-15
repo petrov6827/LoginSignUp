@@ -101,7 +101,6 @@ select {
   -moz-appearance: none;
        appearance: none;
   display: block;
-  width: 234px;
   margin-left: 0;
   padding-bottom: 6px;
   background: none;
@@ -116,16 +115,46 @@ select {
   color: #111111;
 }
 
-select::after {
+.select_nation_select {
+  width: 234px;
+}
+
+.select_nation,
+.select_day,
+.select_mon,
+.select_year {
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+.select_nation::after,
+.select_day::after,
+.select_mon::after,
+.select_year::after {
   content: "";
   display: block;
   position: absolute;
-  top: 50%;
-  z-index: 1;
-  margin-top: -3px;
-  border-style: solid;
-  border-width: 4px 4px 0 4px;
-  border-color: #000 transparent transparent transparent;
+  top: 5px;
+  right: 10px;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  width: 5px;
+  height: 5px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.select_day {
+  width: 56px;
+}
+
+.select_mon {
+  width: 91px;
+}
+
+.select_year {
+  width: 67px;
 }
 
 .form_rows {
@@ -151,8 +180,8 @@ select::after {
           justify-content: space-between;
 }
 
-.dateofbirth_row select {
-  margin-right: 15px;
+.dateofbirth_row div {
+  margin-right: 10px;
 }
 
 input[type="radio"] {
