@@ -1,13 +1,12 @@
 body {
   width: 800px;
   height: 600px;
-  margin: 150px auto;
   background: #F4F5FC;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: -400px;
-  margin-top: -300px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   font-family: 'Work Sans', Serif;
 }
 
@@ -136,7 +135,7 @@ select {
   display: block;
   position: absolute;
   top: 5px;
-  right: 10px;
+  right: 2px;
   border-bottom: 1px solid #000;
   border-right: 1px solid #000;
   width: 5px;
@@ -145,22 +144,22 @@ select {
           transform: rotate(45deg);
 }
 
-.select_day {
+.select_day select {
   width: 56px;
 }
 
-.select_mon {
+.select_mon select {
   width: 91px;
 }
 
-.select_year {
+.select_year select {
   width: 67px;
 }
 
 .form_rows {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-bottom: 45px;
+  margin-bottom: 85px;
 }
 
 .form_row {
@@ -184,8 +183,43 @@ select {
   margin-right: 10px;
 }
 
+.form_row_gender label {
+  position: relative;
+}
+
+.form_row_email {
+  position: relative;
+}
+
+input[type="email"]::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 2px;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  width: 5px;
+  height: 5px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
 input[type="radio"] {
+  display: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+}
+
+input[type="radio"] + label:before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0;
   width: 12px;
+  height: 12px;
   border: 0.7px solid #5A61ED;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -196,6 +230,32 @@ input[type="radio"] {
   font-weight: normal;
   font-size: 14px;
   line-height: 16px;
+}
+
+input[type="radio"]:checked + label:after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: 50%;
+  left: 6px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #5a61ed;
+  border-radius: 6px;
+}
+
+input[type="radio"] + label {
+  display: inline;
+  position: relative;
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  vertical-align: middle;
+  padding-left: 20px;
+  color: #111111;
 }
 
 .last_row {
@@ -221,5 +281,13 @@ input[type="radio"] {
   background: #5A61ED;
   padding: 7px 25px;
   margin-left: 188px;
+}
+
+.round {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 127px;
+  overflow: hidden;
 }
 /*# sourceMappingURL=main.css.map */
